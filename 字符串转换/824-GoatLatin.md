@@ -1,5 +1,7 @@
 # 824题-GoatLatin
 
+![简单题](https://img.shields.io/github/release/ustctug/ustcthesis/all.svg)
+
 ## 关键词
 
 拆分字符串、拼接字符串、遍历、字符处理、字符串截取、单词缓存、HashSet
