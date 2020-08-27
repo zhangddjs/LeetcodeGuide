@@ -1,6 +1,6 @@
-# 824题-GoatLatin
+# #824 Goat Latin
 
-![简单题](https://img.shields.io/github/release/ustctug/ustcthesis/all.svg)
+![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 

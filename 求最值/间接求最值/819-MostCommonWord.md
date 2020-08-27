@@ -1,8 +1,10 @@
-# 819题-最频繁单词
+# #819 Most Common Word
+
+![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
-转换成求最值问题、遍历、分类、排序、哨兵、正则、HashMap、HashSet、拆分字符串
+最频繁单词、转换成求最值问题、遍历、分类、排序、哨兵、正则、HashMap、HashSet、拆分字符串
 
 ## 描述
 

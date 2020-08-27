@@ -1,8 +1,10 @@
-# 812题-最大面积
+# #812 Largest Triangle Area
+
+![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
-暴力法、遍历、排序、哨兵、数学、凸包
+最大面积、暴力法、遍历、排序、哨兵、数学、凸包
 
 ## 描述
 

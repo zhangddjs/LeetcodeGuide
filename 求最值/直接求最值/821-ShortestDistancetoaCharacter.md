@@ -1,4 +1,6 @@
-# 821题-最短字符距离
+# #821 Shortest Distance to a Character
+
+![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
