@@ -1,10 +1,16 @@
-# #819 Most Common Word
+# [#819 Most Common Word](https://leetcode.com/problems/most-common-word/)
 
 ![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
 最频繁单词、转换成求最值问题、遍历、分类、排序、哨兵、正则、HashMap、HashSet、拆分字符串
+
+## 题目
+
+Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn't banned, and that the answer is unique.
+
+Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.
 
 ## 描述
 

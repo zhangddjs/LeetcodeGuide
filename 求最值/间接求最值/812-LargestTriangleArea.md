@@ -1,10 +1,14 @@
-# #812 Largest Triangle Area
+# [#812 Largest Triangle Area](https://leetcode.com/problems/largest-triangle-area/)
 
 ![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
 最大面积、暴力法、遍历、排序、哨兵、数学、凸包
+
+## 题目
+
+You have a list of points in the plane. Return the area of the largest triangle that can be formed by any 3 of the points.
 
 ## 描述
 

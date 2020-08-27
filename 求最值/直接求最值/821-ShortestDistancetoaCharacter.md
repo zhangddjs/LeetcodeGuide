@@ -1,10 +1,14 @@
-# #821 Shortest Distance to a Character
+# [#821 Shortest Distance to a Character](https://leetcode.com/problems/shortest-distance-to-a-character/)
 
 ![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
 字符串、遍历、排序、哨兵、三指针、两次遍历、缓存、批量求最值
+
+## 题目
+
+Given a string `S` and a character `C`, return an array of integers representing the shortest distance from the character `C` in the string.
 
 ## 描述
 

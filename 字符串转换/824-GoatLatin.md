@@ -1,10 +1,30 @@
-# #824 Goat Latin
+# [#824 Goat Latin](https://leetcode.com/problems/goat-latin/)
 
 ![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
 
 ## 关键词
 
 拆分字符串、拼接字符串、遍历、字符处理、字符串截取、单词缓存、HashSet
+
+## 题目
+
+A sentence `S` is given, composed of words separated by spaces. Each word consists of lowercase and uppercase letters only.
+
+We would like to convert the sentence to "_Goat Latin_" (a made-up language similar to Pig Latin.)
+
+The rules of Goat Latin are as follows:
+
++ If a word begins with a vowel (a, e, i, o, or u), append `"ma"` to the end of the word.
+For example, the word 'apple' becomes 'applema'.
+
++ If a word begins with a consonant (i.e. not a vowel), remove the first letter and append it to the end, then add `"ma"`.
+For example, the word `"goat"` becomes `"oatgma"`.
+
++ Add one letter `'a'` to the end of each word per its word index in the sentence, starting with 1.
+For example, the first word gets `"a"` added to the end, the second word gets `"aa"` added to the end and so on.
+Return the final sentence representing the conversion from `S` to Goat Latin.
+
+Return the final sentence representing the conversion from `S` to Goat Latin.
 
 ## 描述
 
@@ -23,7 +43,7 @@
 
 从case中可以看出，本题要对每个单词进行判断和处理，因此第一步是拆分字符串，拆成数组后进行遍历，根据case删除单词首字母或在词尾添加字符，拼接到输出字符串末尾，这一步也可以在遍历完成后将所有单词拼接并通过空格符分隔。------方法1
 
-参考[[引用]819题](..\求最值\间接求最值\819题-最频繁单词.md)可知，通过字符处理+单词缓存的方法可以以OnePass的方式完成整个操作流程。此处不再赘述。
+参考[[引用]819题](..\求最值\间接求最值\819-MostCommonWord.md)可知，通过字符处理+单词缓存的方法可以以OnePass的方式完成整个操作流程。此处不再赘述。
 
 ## 解决方案
 
