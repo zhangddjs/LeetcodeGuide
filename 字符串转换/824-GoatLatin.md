@@ -1,6 +1,6 @@
 # [#824 Goat Latin](https://leetcode.com/problems/goat-latin/)
 
-![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
+![Easy](/figures/Easy.svg)
 
 ## 关键词
 

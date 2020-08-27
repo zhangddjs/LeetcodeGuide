@@ -1,6 +1,6 @@
 # [#812 Largest Triangle Area](https://leetcode.com/problems/largest-triangle-area/)
 
-![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
+![Easy](/figures/Easy.svg)
 
 ## 关键词
 

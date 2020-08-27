@@ -1,6 +1,6 @@
 # [#830 Positions of Large Groups](https://leetcode.com/problems/positions-of-large-groups/)
 
-![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
+![Easy](/figures/Easy.svg)
 
 ## 关键词
 

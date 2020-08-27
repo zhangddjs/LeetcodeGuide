@@ -1,6 +1,6 @@
 # [#821 Shortest Distance to a Character](https://leetcode.com/problems/shortest-distance-to-a-character/)
 
-![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
+![Easy](/figures/Easy.svg)
 
 ## 关键词
 

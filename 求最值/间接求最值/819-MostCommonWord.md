@@ -1,6 +1,6 @@
 # [#819 Most Common Word](https://leetcode.com/problems/most-common-word/)
 
-![Easy](https://raw.githubusercontent.com/zhangddjs/LeetcodeGuide/master/figures/Easy.svg)
+![Easy](/figures/Easy.svg)
 
 ## 关键词
 
