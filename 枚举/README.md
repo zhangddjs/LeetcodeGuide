@@ -6,7 +6,7 @@
 
 + 简单题
 
-  + [830题-枚举Large Group起止点](.\830-PositionsofLargeGroups.md)-遍历、多指针
+  + [830题-枚举Large Group起止点](830-PositionsofLargeGroups.md)-遍历、多指针
 
 @TODO:
 

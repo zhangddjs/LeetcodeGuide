@@ -34,8 +34,8 @@ Return the final sentence representing the conversion from `S` to Goat Latin.
 
 **Notes：**
 
-- 1 <= 字符串长度 <= 150.
-- 输入字符串包含大小写字母和空格，每个单词之间1个空格。
++ 1 <= 字符串长度 <= 150.
++ 输入字符串包含大小写字母和空格，每个单词之间1个空格。
 
 ## 思路
 
@@ -43,7 +43,7 @@ Return the final sentence representing the conversion from `S` to Goat Latin.
 
 从case中可以看出，本题要对每个单词进行判断和处理，因此第一步是拆分字符串，拆成数组后进行遍历，根据case删除单词首字母或在词尾添加字符，拼接到输出字符串末尾，这一步也可以在遍历完成后将所有单词拼接并通过空格符分隔。------方法1
 
-参考[[引用]819题](..\求最值\间接求最值\819-MostCommonWord.md)可知，通过字符处理+单词缓存的方法可以以OnePass的方式完成整个操作流程。此处不再赘述。
+参考[[引用]819题](/求最值/间接求最值/819-MostCommonWord.md)可知，通过字符处理+单词缓存的方法可以以OnePass的方式完成整个操作流程。此处不再赘述。
 
 ## 解决方案
 

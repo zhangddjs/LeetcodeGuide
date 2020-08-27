@@ -18,10 +18,10 @@ You have a list of points in the plane. Return the area of the largest triangle 
 
 **Notes：**
 
-1. 3 < 点的个数 < 50;
-2. 点集无重复
-3. 点的x、y坐标范围在[-50,50];
-4. 精确到10^-6;
++ 3 < 点的个数 < 50;
++ 点集无重复
++ 点的x、y坐标范围在[-50,50];
++ 精确到10^-6;
 
 ## 思路
 
@@ -71,7 +71,7 @@ class Solution {
         Collections.sort(list);
         return list.get(list.size() - 1);
     }
-    
+
     public double triangleArea(int[] point0, int[] point1, int[] point2){
         return Math.abs((point1[1] - point0[1]) * (point2[0] - point0[0]) -
                         (point2[1] - point0[1]) * (point1[0] - point0[0])) / 2.0;
@@ -97,7 +97,7 @@ class Solution {
                     max = Math.max(triangleArea(points[i], points[j], points[k]), max);
         return max;
     }
-    
+
     public double triangleArea(int[] point0, int[] point1, int[] point2){
         return Math.abs((point1[1] - point0[1]) * (point2[0] - point0[0]) -
                         (point2[1] - point0[1]) * (point1[0] - point0[0])) / 2.0;

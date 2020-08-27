@@ -10,7 +10,7 @@
 
 + 简单题
 
-  + [812题-最大面积](.\812-LargestTriangleArea.md)-遍历、排序、哨兵
+  + [812题-最大面积](812-LargestTriangleArea.md)-遍历、排序、哨兵
 
 @TODO:
 
@@ -18,7 +18,7 @@
 
 + 简单题
 
-  + [819题-最频繁单词](.\819-MostCommonWord.md)-遍历、分类、排序、哨兵
+  + [819题-最频繁单词](819-MostCommonWord.md)-遍历、分类、排序、哨兵
 
 @TODO:
 

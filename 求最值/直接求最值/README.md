@@ -12,7 +12,7 @@
 
 + 简单题
 
-  + [821题-最短字符距离](./821-ShortestDistancetoaCharacter.md)-遍历、排序、哨兵、多指针、多次遍历、缓存
+  + [821题-最短字符距离](821-ShortestDistancetoaCharacter.md)-遍历、排序、哨兵、多指针、多次遍历、缓存
 
 @TODO:
 

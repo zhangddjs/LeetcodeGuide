@@ -20,13 +20,13 @@ Words in the list of banned words are given in lowercase, and free of punctuatio
 
 **Notes：**
 
-- 1 <= 段落长度 <= 1000.
-- 0 <= 黑名单单词数 <= 100.
-- 1 <= 每个黑名单单词长度 <= 10.
-- 答案唯一，小写输出。
-- 段落只包含字母、空格或标点符号感叹号、问号、单引号、逗号、分号、句号。
-- 没有连字符或带有连字符的单词。
-- 单词仅包含字母，不能包含单引号或其他标点符号。
++ 1 <= 段落长度 <= 1000.
++ 0 <= 黑名单单词数 <= 100.
++ 1 <= 每个黑名单单词长度 <= 10.
++ 答案唯一，小写输出。
++ 段落只包含字母、空格或标点符号感叹号、问号、单引号、逗号、分号、句号。
++ 没有连字符或带有连字符的单词。
++ 单词仅包含字母，不能包含单引号或其他标点符号。
 
 ## 思路
 
@@ -164,4 +164,4 @@ class Solution {
 
 <div id="refer-anchor-1"></div>
 
-- [1] [Leetcode. 819-Solution](https://leetcode.com/problems/most-common-word/solution/)
++ [1] [Leetcode. 819-Solution](https://leetcode.com/problems/most-common-word/solution/)

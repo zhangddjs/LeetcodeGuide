@@ -24,9 +24,9 @@ The final answer should be in lexicographic order.
 
 **Notes：**
 
-- 1 <= 字符串长度 <= 1000.
-- 输入字符串中只有小写字母
-- 输出按字典序。
++ 1 <= 字符串长度 <= 1000.
++ 输入字符串中只有小写字母
++ 输出按字典序。
 
 ## 思路
 

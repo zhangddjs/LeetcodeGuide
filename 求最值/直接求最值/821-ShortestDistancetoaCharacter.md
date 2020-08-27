@@ -18,9 +18,9 @@ Given a string `S` and a character `C`, return an array of integers representing
 
 **Notes：**
 
-- 1 <= 字符串长度 <= 10000.
-- 目标字符保证出现在字符串中。
-- 字符串字符和目标字符均为小写。
++ 1 <= 字符串长度 <= 10000.
++ 目标字符保证出现在字符串中。
++ 字符串字符和目标字符均为小写。
 
 ## 思路
 
@@ -49,7 +49,6 @@ Given a string `S` and a character `C`, return an array of integers representing
 时间复杂度：$O(n)$   ---100%
 
 空间复杂度：$O(n)$   ---92%
-
 
 ``` java
 class Solution {
@@ -104,5 +103,4 @@ class Solution {
 
 <div id="refer-anchor-1"></div>
 
-- [1] [Leetcode. 821-Solution](https://leetcode.com/problems/shortest-distance-to-a-character/solution/)
-
++ [1] [Leetcode. 821-Solution](https://leetcode.com/problems/shortest-distance-to-a-character/solution/)
