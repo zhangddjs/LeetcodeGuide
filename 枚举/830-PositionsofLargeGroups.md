@@ -16,7 +16,7 @@ Call a group large if it has 3 or more characters.  We would like the starting a
 
 The final answer should be in lexicographic order.
 
-## 描述
+## 简述
 
 **输入：** 字符串
 

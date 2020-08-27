@@ -12,7 +12,7 @@ Given a paragraph and a list of banned words, return the most frequent word that
 
 Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.
 
-## 描述
+## 简述
 
 **输入：** 英文段落；单词黑名单
 

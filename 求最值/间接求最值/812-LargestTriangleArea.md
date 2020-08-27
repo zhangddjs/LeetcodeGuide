@@ -10,7 +10,7 @@
 
 You have a list of points in the plane. Return the area of the largest triangle that can be formed by any 3 of the points.
 
-## 描述
+## 简述
 
 **输入：** 点的数组
 

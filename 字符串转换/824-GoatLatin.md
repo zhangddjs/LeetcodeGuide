@@ -26,7 +26,7 @@ Return the final sentence representing the conversion from `S` to Goat Latin.
 
 Return the final sentence representing the conversion from `S` to Goat Latin.
 
-## 描述
+## 简述
 
 **输入：** 字符串
 
