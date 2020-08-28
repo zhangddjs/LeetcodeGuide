@@ -132,7 +132,7 @@ height = min(t1,t2) - max(b1,b2)
 return width > 0 and height > 0
 ```
 
-简化后[$^{[3]}$](#refer-anchor-3)为：
+简化后为：
 
 ``` java
 class Solution {
