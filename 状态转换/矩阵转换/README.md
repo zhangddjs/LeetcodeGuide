@@ -8,7 +8,7 @@
 
   + [832题-翻转图像](832-FlippinganImage.md)-
 
-@TODO:
+TODO
 
 ## 此类问题解决方案汇总
 

@@ -12,7 +12,7 @@
 
   + [812题-最大面积](812-LargestTriangleArea.md)-遍历、排序、哨兵
 
-@TODO:
+TODO
 
 ### 求最（不）频繁目标
 
@@ -20,7 +20,7 @@
 
   + [819题-最频繁单词](819-MostCommonWord.md)-遍历、分类、排序、哨兵
 
-@TODO:
+TODO
 
 ## 此类问题解决方案汇总
 

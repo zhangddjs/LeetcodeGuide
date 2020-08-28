@@ -12,7 +12,7 @@
 
   + [引用][821题-最短字符距离](/求最值/直接求最值/821-ShortestDistancetoaCharacter.md)-字符查找
 
-@TODO:
+TODO
 
 ## 此类问题解决方案汇总
 

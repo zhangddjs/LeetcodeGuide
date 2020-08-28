@@ -8,19 +8,19 @@
 
   + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
 
-@TODO:
+TODO
 
 + 中等题
 
   + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
 
-@TODO:
+TODO
 
 + 复杂题
 
   + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
 
-@TODO:
+TODO
 
 ## 此类问题解决方案汇总
 
