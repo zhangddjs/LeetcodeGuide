@@ -40,7 +40,7 @@ Words in the list of banned words are given in lowercase, and free of punctuatio
 
 ### 方法1-暴力解
 
-将段落拆分成单词数组，遍历单词并记录每个符合条件的单词的出现次数，排序求出现次数最多的单词。(关键词：遍历，排序)
+将段落拆分成单词数组，遍历单词并记录每个符合条件的单词的出现次数，排序求出现次数最多的单词。(关键词：遍历、排序)
 
 时间复杂度：$O(n\log(n))$   ---66%
 
@@ -66,7 +66,7 @@ class Solution {
 
 ### 方法2-优化的暴力法(字符串处理流水线String Processing in Pipeline)
 
-将段落拆分成单词数组，遍历单词并记录每个符合条件的单词的出现次数，实时记录局部最大频数和其对应的单词。(关键词：遍历，哨兵)
+将段落拆分成单词数组，遍历单词并记录每个符合条件的单词的出现次数，实时记录局部最大频数和其对应的单词。(关键词：遍历、哨兵)
 
 时间复杂度：$O(n)$   ---66%
 
@@ -108,7 +108,7 @@ String[] words = p.replaceAll("\\W+" , " ").toLowerCase().split("\\s+");
 
 ### 扩展方法3-真正的OnePass:字符处理(Character Processing in One-Pass)[$^{[1]}$](#refer-anchor-1)
 
-遍历每个字符，用Character.isLetter(currChar)判断是否到达单词末尾和下一个单词的开头，从而得到当前正在遍历的单词，更新频数。
+遍历每个字符，用Character.isLetter(currChar)判断是否到达单词末尾和下一个单词的开头，从而得到当前正在遍历的单词，更新频数。(关键词：字符处理、单词缓存)
 
 时间复杂度：$O(n)$
 

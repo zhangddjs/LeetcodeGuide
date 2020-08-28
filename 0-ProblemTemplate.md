@@ -33,7 +33,7 @@ Description
 
 ### TODO方法1-什么方法
 
-过程简述。(关键词：keyword，keyword)
+过程简述。(关键词：keyword、keyword)
 
 时间复杂度：$O()$ ---%
 
