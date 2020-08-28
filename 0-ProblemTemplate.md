@@ -1,4 +1,4 @@
-# TODO[#0 Problem Template](leetcodelink)
+# TODO[#0 Problem Template]()
 
 ![Easy](/figures/Easy.svg)
 ![Medium](/figures/Medium.svg)
@@ -57,4 +57,4 @@ Description
 
 <div id="refer-anchor-1"></div>
 
-+ [1] [Leetcode. 0-Solution](leetcodelink/solution)
++ [1] [Leetcode. 0-Solution]()

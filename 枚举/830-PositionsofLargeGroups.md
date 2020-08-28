@@ -36,7 +36,7 @@ The final answer should be in lexicographic order.
 
 ## 解决方案
 
-### 方法1-多指针法
+### 方法1-暴力法(多指针法)
 
 双指针遍历字符串，将符合条件的结果加入到输出数组中。(关键词：遍历、双指针)
 

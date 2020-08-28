@@ -1,4 +1,4 @@
-# [#836 Rectangle Overlap]([leetcodelink](https://leetcode.com/problems/rectangle-overlap/))
+# [#836 Rectangle Overlap](https://leetcode.com/problems/rectangle-overlap/)
 
 ![Easy](/figures/Easy.svg)
 

@@ -24,6 +24,8 @@ TODO
 
 ## 此类问题解决方案汇总
 
+\*总题数$^个$
+
 TODO某法：$keyword^次$、$keyword^次$、...
 
 TODO某法$^次$
