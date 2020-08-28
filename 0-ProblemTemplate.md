@@ -1,4 +1,4 @@
-# [#0 Problem Template](leetcodelink)
+# TODO[#0 Problem Template](leetcodelink)
 
 ![Easy](/figures/Easy.svg)
 ![Medium](/figures/Medium.svg)
@@ -31,7 +31,7 @@ Description
 
 ## 解决方案
 
-### 方法1-什么方法
+### TODO方法1-什么方法
 
 过程简述。(关键词：keyword，keyword)
 
@@ -42,3 +42,19 @@ Description
 ``` java
 //Solution
 ```
+
+## 扩展
+
+### TODO扩展一些知识和方法[$^{[1]}$](#refer-anchor-1)
+
+内容
+
+``` java
+//Extension Solution
+```
+
+## 参考
+
+<div id="refer-anchor-1"></div>
+
++ [1] [Leetcode. 0-Solution](leetcodelink/solution)
