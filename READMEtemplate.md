@@ -4,21 +4,21 @@
 
 ### TODO情形1描述
 
-+ 简单题
++ 简单题$^1$
 
   + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 
-+ 中等题
++ 中等题$^1$
 
-  + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
+  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 
-+ 复杂题
++ 复杂题$^1$
 
-  + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
+  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 
@@ -26,7 +26,7 @@ TODO
 
 \*总题数$^个$
 
-TODO某法：$keyword^次$、$keyword^次$、...
+TODO某法：keyword$^次$、keyword$^次$、...
 
 TODO某法$^次$
 

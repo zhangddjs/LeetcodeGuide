@@ -94,7 +94,7 @@ class Solution {
 + 奇数在边上
 + 顺时针或逆时针按43816729序列排序
 
-``` java
+``` python
 def numMagicSquaresInside(self, g):
     def isMagic(i, j):
         s = "".join(str(g[i + x / 3][j + x % 3]) for x in [0, 1, 2, 5, 8, 7, 6, 3])
