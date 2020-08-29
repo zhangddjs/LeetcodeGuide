@@ -22,7 +22,7 @@
 
 + 简单题$^1$
 
-  + [引用][852题-山峰数组峰顶索引](/求索引/852-PeakIndexinaMountainArray.md)-遍历、哨兵、二分法、单峰问题、黄金分割查找
+  + [![[引用][求索引]](/figures/Ref-Index.svg) 852题-山峰数组峰顶索引](/求索引/852-PeakIndexinaMountainArray.md)-遍历、哨兵、二分法、单峰问题、黄金分割查找
 
 ## 此类问题解决方案汇总
 

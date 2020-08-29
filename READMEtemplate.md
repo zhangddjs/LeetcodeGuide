@@ -12,13 +12,13 @@ TODO
 
 + 中等题$^1$
 
-  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
+  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 
 + 复杂题$^1$
 
-  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
+  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 

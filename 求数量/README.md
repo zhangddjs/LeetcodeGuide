@@ -6,7 +6,7 @@
 
 + 简单题$^1$
 
-  + [引用][840题-二维矩阵中的幻方数](/枚举/840-MagicSquaresInGrid.md)-遍历(Top-Down)、规律
+  + [![[引用][枚举]](/figures/Ref-Enumerate.svg) 840题-二维矩阵中的幻方数](/枚举/840-MagicSquaresInGrid.md)-遍历(Top-Down)、规律
 
 ## 此类问题解决方案汇总
 

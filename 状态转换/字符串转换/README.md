@@ -8,15 +8,15 @@
 
   + [824题-GoatLatin](824-GoatLatin.md)-拆分字符串、拼接字符串、单词缓存、字符处理、字符串截取
 
-  + [引用][819题-最频繁单词](/求最值/间接求最值/819-MostCommonWord.md)-正则、拆分字符串、单词缓存、字符处理
+  + [![[引用][求最值]](/figures/Ref-MaximumAndMinimum.svg) 819题-最频繁单词](/求最值/间接求最值/819-MostCommonWord.md)-正则、拆分字符串、单词缓存、字符处理
 
-  + [引用][821题-最短字符距离](/求最值/直接求最值/821-ShortestDistancetoaCharacter.md)-字符查找
+  + [![[引用][求最值]](/figures/Ref-MaximumAndMinimum.svg) 821题-最短字符距离](/求最值/直接求最值/821-ShortestDistancetoaCharacter.md)-字符查找
 
 ### 判断某状态是否能转换到目标状态$^1$
 
 + 简单题$^1$
 
-  + [引用][859题-兄弟字符串](/比大小/859-BuddyStrings.md)-字符处理
+  + [![[引用][比大小]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比大小/859-BuddyStrings.md)-字符处理
 
 ## 此类问题解决方案汇总
 

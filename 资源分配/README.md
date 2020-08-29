@@ -1,8 +1,8 @@
-# 资源分配
+# TODO类别名
 
 ## 哪些情形-解决方案
 
-### 判断是否有足够的符合条件的资源
+### TODO情形1描述
 
 + 简单题$^1$
 
@@ -12,13 +12,13 @@ TODO
 
 + 中等题$^1$
 
-  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
+  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 
 + 复杂题$^1$
 
-  + [引用][0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
+  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
 
 TODO
 

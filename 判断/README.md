@@ -8,7 +8,7 @@ TODO
 
 + 简单题$^1$
 
-  + [引用][860题-能否找零](/资源分配/860-LemonadeChange.md)-
+  + [![[引用][资源分配]](/figures/Ref-ResourceAllocation.svg) 860题-能否找零](/资源分配/860-LemonadeChange.md)-
 
 ### 判断是否相交$^1$
 
@@ -20,7 +20,7 @@ TODO
 
 + 简单题$^1$
 
-  + [![[引用][求交集]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比大小/859-BuddyStrings.md)-遍历、枚举false条件
+  + [![[引用][比大小]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比大小/859-BuddyStrings.md)-遍历、枚举false条件
 
 ## 此类问题解决方案汇总
 
