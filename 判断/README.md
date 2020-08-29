@@ -20,7 +20,7 @@ TODO
 
 + 简单题$^1$
 
-  + [引用][859题-兄弟字符串](/比大小/859-BuddyStrings.md)-遍历、枚举false条件
+  + [![[引用][求交集]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比大小/859-BuddyStrings.md)-遍历、枚举false条件
 
 ## 此类问题解决方案汇总
 
