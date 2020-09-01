@@ -6,13 +6,13 @@
 
 + 简单题$^1$
 
-  + [840题-二维矩阵中的幻方数](840-MagicSquaresInGrid.md)-遍历(Top-Down)、规律
+  + [840题-二维矩阵中的幻方数]-遍历(Top-Down)、规律
 
 ### 枚举满足条件的所有元素$^1$
 
 + 简单题$^1$
 
-  + [830题-枚举Large Group起止点](830-PositionsofLargeGroups.md)-遍历、多指针
+  + [830题-枚举Large Group起止点]-遍历、多指针
 
 ## 此类问题解决方案汇总
 
@@ -23,3 +23,7 @@
 ## 常见最优时间复杂度
 
 $O(n)^2$
+
+<!-- 题目链接 -->
+[840题-二维矩阵中的幻方数]:840-MagicSquaresInGrid.md
+[830题-枚举Large Group起止点]:830-PositionsofLargeGroups.md
