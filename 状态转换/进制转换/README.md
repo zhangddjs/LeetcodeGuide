@@ -1,34 +1,18 @@
-# TODO类别名
+# 进制转换
 
 ## 哪些情形-解决方案
 
-### TODO情形1描述
+### 十进制转二进制$^1$
 
 + 简单题$^1$
 
-  + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
-
-+ 中等题$^1$
-
-  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
-
-+ 复杂题$^1$
-
-  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
+  + [![[引用][求最值]](/figures/Ref-MaximumAndMinimum.svg) 868题-二进制元素距离](/求最值/直接求最值/868-BinaryGap.md)-位操作、位移、除余
 
 ## 此类问题解决方案汇总
 
-\*总题数$^个$
+\*总题数$^1$
 
-TODO某法：keyword$^次$、keyword$^次$、...
-
-TODO某法$^次$
+暴力法：位操作$^1$(位移$^1$)、除余$^1$
 
 ## 常见最优时间复杂度
 
@@ -40,6 +24,10 @@ TODO$O()^次$
 
 ## 扩展知识
 
-### 扩展知识1描述
+### 位操作
 
-内容
+右移一位：`N >> 1` $\Leftrightarrow$ `N %= 2`
+
+判断最后第i位：`((N >> i) & 1) > 0`
+
+判断最后一位：`N % 2 == 0`
