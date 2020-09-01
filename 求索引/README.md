@@ -24,3 +24,7 @@ $O(n)^1$
 
 <!-- 题目链接 -->
 [852题-山峰数组峰顶索引]:852-PeakIndexinaMountainArray.md
+
+<script type="text/javascript" async
+
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
