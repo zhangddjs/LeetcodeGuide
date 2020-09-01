@@ -6,7 +6,7 @@
 
 + 简单题$^1$
 
-  + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
+  + [0题-题目模板]-keyword、keyword、...
 
 TODO
 
