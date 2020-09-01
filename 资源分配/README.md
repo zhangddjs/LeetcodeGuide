@@ -1,45 +1,19 @@
-# TODO类别名
+# 资源分配
 
 ## 哪些情形-解决方案
 
-### TODO情形1描述
+### 找零问题
 
 + 简单题$^1$
 
-  + [0题-题目模板](0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
-
-+ 中等题$^1$
-
-  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
-
-+ 复杂题$^1$
-
-  + [![[引用][模板]](/figures/Ref-Template.svg) 0题-题目模板](/0-ProblemTemplate.md)-keyword、keyword、...
-
-TODO
+  + [860题-柠檬水找零](860-LemonadeChange.md)-遍历、拆分情况、贪心算法、HashMap
 
 ## 此类问题解决方案汇总
 
-\*总题数$^个$
+\*总题数$^1$
 
-TODO某法：keyword$^次$、keyword$^次$、...
-
-TODO某法$^次$
+暴力法：遍历$^1$、拆分情况$^1$、枚举false条件$^1$、HashMap$^1$、贪心算法$^1$
 
 ## 常见最优时间复杂度
 
-TODO$O()$
-
-## 注意
-
-+ 此处写注意点
-
-## 扩展知识
-
-### 扩展知识1描述
-
-内容
+$O(n)^1$
