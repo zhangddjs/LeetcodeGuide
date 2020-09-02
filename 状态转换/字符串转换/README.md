@@ -36,5 +36,16 @@ $O(n)^1$
 
 + 某些字符串操作的封装方法的复杂度不包含在复杂度分析中。
 
+## 扩展
+
+### 扩展一些字符串正则处理方式[$^{[1]}$](#refer-anchor-1)
+
+``` java
+String normalizedStr = paragraph.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
+String[] words = normalizedStr.split("\\s+");
+
+String[] words = p.replaceAll("\\W+" , " ").toLowerCase().split("\\s+");
+```
+
 <!-- 题目链接 -->
 [824题-GoatLatin]:824-GoatLatin.md
