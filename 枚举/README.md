@@ -32,6 +32,16 @@
 
 $O(n)^2$
 
+## 扩展知识
+
+### 用整形作为访问数组
+
+用32位整形作为访问数组，判断数组第i位是否访问过
+
+``` java
+if (!((used >> i) & 1)) used |= (1<<i)    //如果没访问，则访问
+```
+
 <!-- 题目链接 -->
 [840题-二维矩阵中的幻方数]:840-MagicSquaresInGrid.md
 [830题-枚举Large Group起止点]:830-PositionsofLargeGroups.md
