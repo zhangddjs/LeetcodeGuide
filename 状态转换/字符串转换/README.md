@@ -16,7 +16,7 @@
 
 + 简单题$^1$
 
-  + [![[引用][比大小]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比大小/859-BuddyStrings.md)-字符处理
+  + [![[引用][比较]](/figures/Ref-Compare.svg) 859题-兄弟字符串](/比较/859-BuddyStrings.md)-字符处理
 
 ### 某状态能转换到目标状态的最优转换方案$^1$
 
