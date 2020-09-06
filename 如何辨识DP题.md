@@ -11,3 +11,7 @@ DP是比较难且比较重要的算法，不仅需要掌握其原理，还需要
 **核心就是枚举，回溯，备忘录，dp。**
 
 状态转移方程取决于题目要求的目标输出。求最大值就取Max，求最小值就取Min，判断就取true or false，统计就+1或+0。
+
+题目[712-MinimumASCIIDeleteSumforTwoStrings]有很详细的过程详解。
+
+[712-MinimumASCIIDeleteSumforTwoStrings]:求最值/间接求最值/712-MinimumASCIIDeleteSumforTwoStrings.md
