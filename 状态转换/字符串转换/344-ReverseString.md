@@ -51,7 +51,7 @@ class Solution {
 
 ## 扩展
 
-### Life is short, use Python. (c)[$^{[1]}$](#refer-anchor-1)
+### 扩展方法1-Life is short, use Python. (c)[$^{[1]}$](#refer-anchor-1)
 
 人生苦短，使用Python。
 
@@ -59,6 +59,26 @@ class Solution {
 class Solution:
     def reverseString(self, s):
         s.reverse()
+```
+
+### 扩展方法2-递归法[$^{[1]}$](#refer-anchor-1)
+
+递归交换两端字符，但空间复杂度稍高一些。
+
+``` java
+class Solution {
+  public void helper(char[] s, int left, int right) {
+    if (left >= right) return;
+    char tmp = s[left];
+    s[left++] = s[right];
+    s[right--] = tmp;
+    helper(s, left, right);
+  }
+
+  public void reverseString(char[] s) {
+    helper(s, 0, s.length - 1);
+  }
+}
 ```
 
 ## 参考
