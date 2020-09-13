@@ -15,3 +15,35 @@ DP是比较难且比较重要的算法，不仅需要掌握其原理，还需要
 题目[712-MinimumASCIIDeleteSumforTwoStrings]有很详细的过程详解。
 
 [712-MinimumASCIIDeleteSumforTwoStrings]:求最值/间接求最值/712-MinimumASCIIDeleteSumforTwoStrings.md
+
+## 案例
+
+### 寻找最长公共子串
+
+``` java
+class Solution {
+    public String longestSubStr(String s) {
+        if (s == null || s.length() < 2) return s;
+        String s2 = new StringBuffer(s).reverse().toString();
+        int [][] dp = new int [s.length()][s.length()];
+        int maxLen = 1, p = 0;
+        //init
+        for (int i = 0; i < s.length(); ++i) {
+            dp[0][i] = s.charAt(0) == s2.charAt(i) ? 1 : 0;
+            dp[i][0] = s2.charAt(0) == s.charAt(i) ? 1 : 0;
+        }
+        //dp
+        for (int i = 1; i < s.length(); ++i) {
+            for (int j = 1; j < s2.length(); ++j) {
+                dp[i][j] = s.charAt(i) == s2.charAt(j) ? dp[i - 1][j - 1] + 1 : 0;
+                if (dp[i][j] > maxLen $$ s.charAt(i) == s.charAt()) {
+                    maxLen = dp[i][j];
+                    p = i;
+                }
+            }
+        }
+        //build res
+        return s.substring(p - maxLen + 1, p + 1);
+    }
+}
+```
