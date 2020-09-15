@@ -4,7 +4,7 @@
 
 ## 关键词
 
-计算、链表、遍历、栈、头插法、逆置思想、多次遍历、逆置、就地存取进位信息
+计算、链表、合并、遍历、栈、头插法、逆置思想、多次遍历、逆置、就地存取进位信息、递归
 
 ## 题目
 
@@ -87,7 +87,7 @@ class Solution {
 
 ## 扩展
 
-### 扩展方法-就地实现[$^{[1]}$](#refer-anchor-1)
+### 扩展方法1-就地实现[$^{[1]}$](#refer-anchor-1)
 
 从高位向低位进行相加操作也是可以的，同时既然不允许逆置输入，那么逆置输出也可以。过程如下：
 
@@ -105,8 +105,16 @@ class Solution {
 //代码见参考[1]
 ```
 
+### 扩展方法2-递归[$^{[2]}$](#refer-anchor-2)
+
+基于方法1的基础上用递归的方法也可以实现操作，详见参考[${[2]}$](#refer-anchor-2)，此处不再赘述。
+
 ## 参考
 
 <div id="refer-anchor-1"></div>
 
 + [1] [Leetcode. 445-Discuss](https://leetcode.com/problems/add-two-numbers-ii/discuss/92624/C++-O(1)-extra-space-except-for-output.-Reverse-output-instead.-Is-this-cheating)
+
+<div id="refer-anchor-2"></div>
+
++ [2] [Leetcode. 445-Discuss2](https://leetcode.com/problems/add-two-numbers-ii/discuss/92643/Java-O(n)-recursive-solution-by-counting-the-difference-of-length)
