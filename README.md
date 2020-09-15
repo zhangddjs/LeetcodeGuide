@@ -66,3 +66,7 @@ vscode: LeetcodeGuide.code-workspace
 
 <!-- 路径 -->
 [刷题顺序]:题目顺序.md
+
+## 版权
+
+所有题目和部分引用内容版权归 [LeetCode](https://leetcode.com/) 和 [力扣中国](https://leetcode-cn.com/) 所有
