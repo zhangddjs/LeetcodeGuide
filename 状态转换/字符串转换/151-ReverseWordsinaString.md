@@ -72,6 +72,10 @@ class Solution {
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
   public StringBuilder trimSpaces(String s) {
     int left = 0, right = s.length() - 1;
@@ -142,6 +146,10 @@ class Solution {
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
   public String reverseWords(String s) {
     int left = 0, right = s.length() - 1;
@@ -181,6 +189,10 @@ class Solution {
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 public String reverseWords(String s) {
     String[] words = s.trim().split(" +");
     Collections.reverse(Arrays.asList(words));

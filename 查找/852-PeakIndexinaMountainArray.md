@@ -117,6 +117,10 @@ class Solution {
 (关键词：单峰问题、黄金分割查找)
 
 ``` python
+#
+# copyright: LeetCode(https://leetcode.com)
+# 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+#
 def peakIndexInMountainArray(self, A):
     def gold1(l, r):
         return l + int(round((r - l) * 0.382))

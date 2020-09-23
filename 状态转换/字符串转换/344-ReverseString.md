@@ -56,6 +56,10 @@ class Solution {
 人生苦短，使用Python。
 
 ``` python
+#
+# copyright: LeetCode(https://leetcode.com)
+# 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+#
 class Solution:
     def reverseString(self, s):
         s.reverse()

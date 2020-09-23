@@ -64,11 +64,15 @@ class Solution {
 
 ## 扩展
 
-### 扩展方法1-更简洁的暴力法
+### 扩展方法1-更简洁的暴力法[$^{[1]}$](#refer-anchor-1)
 
 该官方方法[$^{[1]}$](#refer-anchor-1)在遍历行元素时做了长度+1处理，不用在循环结束后再单独判断中间元素，同时使用异或的方法进行了逆置，更加高效。(关键词：逆置(异或))
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public int[][] flipAndInvertImage(int[][] A) {
         int C = A[0].length;
@@ -86,6 +90,10 @@ class Solution {
 该最高赞方法[$^{[2]}$](#refer-anchor-2)也在边界上进行了处理，用`i * 2 < n`作为判断条件，从而也不会错过中间元素。该方法还简化了反转和逆置操作，根据性质添加了判断条件减少了计算量，没有借助额外空间，两行代码完成，非常巧妙。(关键词：特征处理)
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public int[][] flipAndInvertImage(int[][] A) {
         int n = A.length;

@@ -57,6 +57,10 @@ class Solution {
 python调用特定函数可以一行实现
 
 ``` python
+#
+# copyright: LeetCode(https://leetcode.com)
+# 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+#
 return list(zip(*A))
 ```
 

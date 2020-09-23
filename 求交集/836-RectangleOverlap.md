@@ -111,6 +111,10 @@ class Solution {
 上面讲述的两种方法其实还有继续化简的可能性。当得到方法2时，通过不相交条件逆推相交条件的方法，便可以得到方法1的优化版本，同时也是方法2的优化版，一行搞定。(关键词：不相交条件和相交条件互推、条件优化)
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
         return rec1[0] < rec2[2] && rec2[0] < rec1[2] && rec1[1] < rec2[3] && rec2[1] < rec1[3];
@@ -125,6 +129,10 @@ class Solution {
 核心算法如下：
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 l1,b1,r1,t1 = rec1
 l2,b2,r2,t2 = rec2
 width = min(r1,r2) - max(l1,l2)
@@ -135,6 +143,10 @@ return width > 0 and height > 0
 简化后为：
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
         return (Math.min(rec1[2], rec2[2]) > Math.max(rec1[0], rec2[0]) && // width > 0

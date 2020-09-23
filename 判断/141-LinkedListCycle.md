@@ -82,6 +82,10 @@ public class Solution {
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 public boolean hasCycle(ListNode head) {
     Set<ListNode> nodesSeen = new HashSet<>();
     while (head != null) {

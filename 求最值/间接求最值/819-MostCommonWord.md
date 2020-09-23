@@ -100,6 +100,10 @@ class Solution {
 ### 扩展一些字符串正则处理方式[$^{[1]}$](#refer-anchor-1)
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 String normalizedStr = paragraph.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
 String[] words = normalizedStr.split("\\s+");
 
@@ -115,6 +119,10 @@ String[] words = p.replaceAll("\\W+" , " ").toLowerCase().split("\\s+");
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public String mostCommonWord(String paragraph, String[] banned) {
 

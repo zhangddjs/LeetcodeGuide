@@ -91,6 +91,10 @@ class Solution {
 空间复杂度：$O(n)$
 
 ``` c++
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 int trap(vector<int>& height)
 {
     int ans = 0, current = 0;
@@ -120,6 +124,10 @@ int trap(vector<int>& height)
 空间复杂度：$O(1)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 int trap(vector<int>& height)
 {
     int left = 0, right = height.size() - 1;

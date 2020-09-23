@@ -95,6 +95,10 @@ class Solution {
 存储4个位置的新值并统一进行赋值操作。
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
   public void rotate(int[][] matrix) {
     int n = matrix.length;
@@ -126,6 +130,11 @@ class Solution {
 先将矩阵进行逆置，再进行转置。反过来也可以。(关键词：逆置、转置)
 
 ``` c++
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
+
 /*
  * clockwise rotate
  * first reverse up to down, then swap the symmetry 

@@ -49,6 +49,10 @@ Return the maximum profit you can make.
 空间复杂度：$O(1)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public int maxProfit(int[] prices, int fee) {
         int cash = 0, hold = -prices[0];
@@ -102,6 +106,10 @@ class Solution {
 有大神在三指针的贪心法基础上继续进行了十分巧妙的优化，实现了非常简洁的双指针贪心法。(双指针)
 
 ``` python
+#
+# copyright: LeetCode(https://leetcode.com)
+# 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+#
 class Solution:
     def maxProfit(self, prices, fee):
         """

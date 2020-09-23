@@ -95,6 +95,10 @@ class Solution {
 + 顺时针或逆时针按43816729序列排序
 
 ``` python
+#
+# copyright: LeetCode(https://leetcode.com)
+# 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+#
 def numMagicSquaresInside(self, g):
     def isMagic(i, j):
         s = "".join(str(g[i + x / 3][j + x % 3]) for x in [0, 1, 2, 5, 8, 7, 6, 3])

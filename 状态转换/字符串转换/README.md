@@ -64,9 +64,13 @@ $O(n)^5$、$O(n^2)^1$
 
 ## 扩展
 
-### 扩展一些字符串正则处理方式[$^{[1]}$](#refer-anchor-1)
+### 扩展一些字符串正则处理方式
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 String normalizedStr = paragraph.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
 String[] words = normalizedStr.split("\\s+");
 

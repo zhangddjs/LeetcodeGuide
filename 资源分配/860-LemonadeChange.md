@@ -109,6 +109,10 @@ class Solution {
 在遍历数组时先进行计算，在计算结束后判断false条件。
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 public boolean lemonadeChange(int[] bills) {
     int five = 0, ten = 0;
     for (int i : bills) {

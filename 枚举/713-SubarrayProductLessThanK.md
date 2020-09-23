@@ -78,6 +78,10 @@ $\log(\prod_i x_i)=\sum_i \log(x_i)$
 空间复杂度：$O(n)$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         if (k == 0) return 0;

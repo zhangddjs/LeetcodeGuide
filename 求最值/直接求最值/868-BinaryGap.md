@@ -67,6 +67,10 @@ class Solution {
 上述方法用`N % 2`来判断当前位数是否为1，下面介绍另一种位处理方法，通过位移的方法取位值，并简化了判断条件，缺点是复杂度固定为$O(32)$。
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
     public int binaryGap(int N) {
         int last = -1, ans = 0;

@@ -112,6 +112,10 @@ class Solution {
 用矩阵第一行和第一列来记录该行或该列是否需要置0。每当遇到0元素时，将该元素所在行和列的第一个元素置为0，代表该行和该列需要置0。
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
   public void setZeroes(int[][] matrix) {
     Boolean isCol = false;

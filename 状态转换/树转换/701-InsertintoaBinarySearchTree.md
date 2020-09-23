@@ -81,6 +81,10 @@ class Solution {
 空间复杂度：$O(\log(n))$
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 class Solution {
   public TreeNode insertIntoBST(TreeNode root, int val) {
     if (root == null) return new TreeNode(val);
