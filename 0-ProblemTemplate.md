@@ -50,6 +50,10 @@ Description
 内容
 
 ``` java
+/**
+ * copyright: LeetCode(https://leetcode.com)
+ * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+ */
 //Extension Solution
 ```
 
