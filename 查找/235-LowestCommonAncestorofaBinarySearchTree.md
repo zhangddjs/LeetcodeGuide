@@ -4,7 +4,7 @@
 
 ## 关键词
 
-查找、二叉树、BST、公共节点
+查找、二叉树、BST、公共节点、DFS、记录路径、BST搜索
 
 ## 题目
 
@@ -137,23 +137,3 @@ class Solution {
     }
 }
 ```
-
-## 扩展
-
-### TODO扩展一些知识和方法[$^{[1]}$](#refer-anchor-1)
-
-内容
-
-``` java
-/**
- * copyright: LeetCode(https://leetcode.com)
- * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
- */
-//Extension Solution
-```
-
-## 参考
-
-<div id="refer-anchor-1"></div>
-
-+ [1] [Leetcode. 0-Solution]()
