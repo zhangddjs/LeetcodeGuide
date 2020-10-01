@@ -4,7 +4,7 @@
 
 ## 关键词
 
-状态转换、构造二叉树、
+状态转换、构造二叉树、HashMap、双指针、子问题、规律、递归
 
 ## 题目
 
@@ -41,6 +41,8 @@ Given preorder and inorder traversal of a tree, construct the binary tree.
 **第二步：** 那么在中序遍历序列中，如果下一节点是当前节点右子树最左节点，则此时对应的前序遍历序列中，下一个节点为当前节点(最近的已遍历过且拥有右孩子的节点)的右孩子节点。否则，代表中序序列中当前节点没有右孩子节点，继续往后遍历，直到下一个节点为其右子树最左节点，连接该节点和前序序列下一节点(右子树根节点)，此时两个序列中的下一个节点在子树中代表的意义和初始时一致，于是从第一步开始循环构造即可完成对整个二叉树的构造。
 
 根据以上分析，我们可以定义HashMap来存储遍历过的路径，用双指针按照第一步和第二步的要求遍历前序和中序序列来完成二叉树的构建。------方法1
+
+在前序遍历序列中，第一个为根节点，其在中序序列中对应索引前面的所有节点则构成左子树节点，后面的所有节点构成右子树节点，从而完成序列拆分。此时用前序序列第一个节点构造根节点并弹出，弹出后的前序序列第一个节点为左或右子树根节点，此时可在中序遍历序列的左或右子树节点子数组中继续拆分。据此，我们可以通过递归的方式完成构造。------方法2[$^{[1]}$](#refer-anchor-1)
 
 ## 解决方案
 
@@ -92,22 +94,58 @@ class Solution {
 }
 ```
 
+### 方法2-分治法[$^{[1]}$](#refer-anchor-1)
+
+递归构造每个子树的根节点，弹出前序序列节点，拆分中序序列。(关键词：子问题、递归)
+
+时间复杂度：$O(n^2)$    //可以用空间O(n)的map降低到$O(n)$
+
+空间复杂度：$O(n)$
+
+``` python
+##
+ # copyright: LeetCode(https://leetcode.com)
+ # 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+##
+def buildTree(self, preorder, inorder):
+    if inorder:
+        ind = inorder.index(preorder.pop(0))
+        root = TreeNode(inorder[ind])
+        root.left = self.buildTree(preorder, inorder[0:ind])
+        root.right = self.buildTree(preorder, inorder[ind+1:])
+        return root
+```
+
 ## 扩展
 
-### TODO扩展一些知识和方法[$^{[1]}$](#refer-anchor-1)
+### 扩展方法-优化的分治法[$^{[2]}$](#refer-anchor-2)
 
-内容
+在方法2中最坏情况为$O(n^2)$，如果使用map存储每个元素的索引，将会额外消耗$O(n)$的空间。因此可以使用指针的方法来取代数组拆分。
 
-``` java
-/**
- * copyright: LeetCode(https://leetcode.com)
- * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
- */
-//Extension Solution
+``` python
+##
+ # copyright: LeetCode(https://leetcode.com)
+ # 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
+##
+def buildTree(self, preorder, inorder):
+    def build(stop):
+        if inorder and inorder[-1] != stop:
+            root = TreeNode(preorder.pop())
+            root.left = build(root.val)
+            inorder.pop()
+            root.right = build(stop)
+            return root
+    preorder.reverse()  # make cheap inorder pop
+    inorder.reverse()
+    return build(None)
 ```
 
 ## 参考
 
 <div id="refer-anchor-1"></div>
 
-+ [1] [Leetcode. 0-Solution]()
++ [1] [Leetcode. 105-Discuss](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/34579/Python-short-recursive-solution.)
+
+<div id="refer-anchor-2"></div>
+
++ [2] [Leetcode. 105-Discuss](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/34543/Simple-O(n)-without-map)
