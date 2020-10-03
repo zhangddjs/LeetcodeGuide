@@ -4,7 +4,7 @@
 
 ## 关键词
 
-统计、矩阵、岛屿问题、
+统计、矩阵、岛屿问题、遍历、访问标记、DFS、并查集
 
 ## 题目
 
@@ -32,7 +32,7 @@ Given a 2d grid map of `'1'`s (land) and `'0'`s (water), count the number of isl
 
 时间复杂度：$O(n)$ ---100%
 
-空间复杂度：$O(1)$ ---99%
+空间复杂度：$O(n)$ ---99%
 
 ``` java
 class Solution {
@@ -59,22 +59,107 @@ class Solution {
 }
 ```
 
+> 深度优先遍历的空间复杂度较大，可以用BFS来优化空间复杂度。
+
 ## 扩展
 
-### TODO扩展一些知识和方法[$^{[1]}$](#refer-anchor-1)
+### 扩展方法-并查集[$^{[1]}$](#refer-anchor-1)
 
-内容
+初始化并查集数据结构，令每个陆地的parent指向自己，初始时岛屿数为矩阵中`1`的个数(陆地的个数)。遍历矩阵，对每一个陆地，连接上下左右四个方向上的相邻陆地，并标记已访问，令岛屿数减去相邻陆地数，最后返回的岛屿数即为要求的岛屿数。
+
+时间复杂度：$O(n)$
+
+空间复杂度：$O(n)$
 
 ``` java
 /**
  * copyright: LeetCode(https://leetcode.com)
  * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
  */
-//Extension Solution
+class Solution {
+  class UnionFind {
+    int count; // # of connected components
+    int[] parent;
+    int[] rank;
+
+    public UnionFind(char[][] grid) { // for problem 200
+      count = 0;
+      int m = grid.length;
+      int n = grid[0].length;
+      parent = new int[m * n];
+      rank = new int[m * n];
+      for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+          if (grid[i][j] == '1') {
+            parent[i * n + j] = i * n + j;
+            ++count;
+          }
+          rank[i * n + j] = 0;
+        }
+      }
+    }
+
+    public int find(int i) { // path compression
+      if (parent[i] != i) parent[i] = find(parent[i]);
+      return parent[i];
+    }
+
+    public void union(int x, int y) { // union with rank
+      int rootx = find(x);
+      int rooty = find(y);
+      if (rootx != rooty) {
+        if (rank[rootx] > rank[rooty]) {
+          parent[rooty] = rootx;
+        } else if (rank[rootx] < rank[rooty]) {
+          parent[rootx] = rooty;
+        } else {
+          parent[rooty] = rootx; rank[rootx] += 1;
+        }
+        --count;
+      }
+    }
+
+    public int getCount() {
+      return count;
+    }
+  }
+
+  public int numIslands(char[][] grid) {
+    if (grid == null || grid.length == 0) {
+      return 0;
+    }
+
+    int nr = grid.length;
+    int nc = grid[0].length;
+    int num_islands = 0;
+    UnionFind uf = new UnionFind(grid);
+    for (int r = 0; r < nr; ++r) {
+      for (int c = 0; c < nc; ++c) {
+        if (grid[r][c] == '1') {
+          grid[r][c] = '0';
+          if (r - 1 >= 0 && grid[r-1][c] == '1') {
+            uf.union(r * nc + c, (r-1) * nc + c);
+          }
+          if (r + 1 < nr && grid[r+1][c] == '1') {
+            uf.union(r * nc + c, (r+1) * nc + c);
+          }
+          if (c - 1 >= 0 && grid[r][c-1] == '1') {
+            uf.union(r * nc + c, r * nc + c - 1);
+          }
+          if (c + 1 < nc && grid[r][c+1] == '1') {
+            uf.union(r * nc + c, r * nc + c + 1);
+          }
+        }
+      }
+    }
+
+    return uf.getCount();
+  }
+}
 ```
 
 ## 参考
 
 <div id="refer-anchor-1"></div>
 
-+ [1] [Leetcode. 0-Solution]()
++ [1] [Leetcode. 200-Solution](https://leetcode.com/problems/number-of-islands/solution/)
