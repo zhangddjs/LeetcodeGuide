@@ -41,6 +41,7 @@ Description
 
 ``` java
 //Solution
+////Written after seeing @xxx's title "xxx" but before looking at its code.
 ```
 
 ## 扩展
