@@ -31,3 +31,5 @@ class Solution {
         return i;
     }
 }
+
+//https://leetcode.com/problems/spiral-matrix-iii/discuss/158971/Python-Sort-All-Coordinates 偶遇俩巨佬
