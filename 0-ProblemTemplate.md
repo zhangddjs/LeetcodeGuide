@@ -52,7 +52,8 @@ Description
 
 ``` java
 /**
- * copyright: LeetCode(https://leetcode.com)
+ * Copyright: LeetCode(https://leetcode.com)
+ * Author: covfefe
  * 代码版权归LeetCode(https://leetcode.com)和力扣中国(https://leetcode-cn.com/)所有
  */
 //Extension Solution
