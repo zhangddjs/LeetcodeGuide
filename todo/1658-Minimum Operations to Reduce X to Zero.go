@@ -5,6 +5,7 @@
  * 
  * step2: then use dp to compute the min Operations
  *
+ * will OOM
  */
 
 var dp [][]int
@@ -55,3 +56,61 @@ func getMinOperations(left, right int) int {
     }
     return min + 1
 }
+
+
+//----------------------------------------------------
+func minOperations(nums []int, x int) int {
+    i, j, count, minOpt, flag := 0, len(nums) - 1, 0, len(nums) - 1, false
+    for i <= j && nums[i] <= x {    // find the left bound
+        x -= nums[i]
+        i++
+        count++
+    }
+    if i > j {    // means the sum of all elems is <= x
+        if x == 0 {
+            return count
+        } else {
+            return -1
+        }
+    }
+    if x == 0 {    //means x can be minused to 0, set temp min Opt nums
+        flag = true
+        minOpt = min(minOpt, count)
+    }
+    for i >= 0 {    // find the right bound
+        if nums[j] > x && i > 0 {    // x can not be minused, slide the left bound
+            i--
+            x += nums[i]
+            count--
+        }
+        if nums[j] > x {    // left bound can not be slided, because is left most
+            if i == 0 {
+                break
+            } else {
+                continue
+            }
+        }
+        x -= nums[j]    // slide the right bound
+        j--
+        count++
+        if x == 0 {    // record the opt num
+            flag = true
+            minOpt = min(minOpt, count)
+        }
+    }
+    if flag {
+        return minOpt
+    }
+    return -1
+}
+
+func min(a, b int) int {
+    if a < b {
+        return a
+    } else {
+        return b
+    }
+}
+
+
+//Brute Force : just traverse.
