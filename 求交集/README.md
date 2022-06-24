@@ -22,6 +22,17 @@
 
 逆转思维$^1$、几何数学$^1$、条件优化$^1$、条件判别法则不唯一$^1$
 
+> for all intervals inputs,
+Sweep Line method should be the first intuition you come up with.
+> For each request [i,j],
+we set count[i]++ and count[j + 1]--,
+Then we sweep once the whole count,
+we can find the frequency for count[i].
+
+> t[start] +=1 means every index after this one will be counted 1 more time,
+
+> t[end+1] -= 1, means every index this one will be counted 1 less time
+
 ## 常见最优时间复杂度
 
 $O(1)^1$
