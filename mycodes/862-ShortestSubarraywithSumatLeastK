@@ -1,0 +1,42 @@
+func shortestSubarray(nums []int, k int) int {
+  sum, res := 0, len(nums)+1
+  l := 0
+  for r := range nums {
+    sum += nums[r]
+    if sum <= 0 {
+      sum = 0
+      l = r+1
+    }
+    for (l <= r) && (sum >= k || nums[l] <= 0) {
+      if sum >= k {
+        res = min(res, r-l+1)
+      }
+      sum-=nums[l]
+      l++
+    }
+  }
+  l = 0
+  for r := range nums {
+    if nums[r] < 0 {
+      for l < r && sum >= k {
+        res = min(res, r-l)
+        sum -= nums[l]
+        l++
+      }
+      l = r + 1
+      sum = 0
+    } else {
+      sum += nums[r]
+    }
+  }
+  for l < len(nums) && sum >= k {
+    res = min(res, len(nums)-l)
+    sum -= nums[l]
+    l++
+  }
+
+  if res == len(nums)+1 {
+    return -1
+  }
+  return res
+}

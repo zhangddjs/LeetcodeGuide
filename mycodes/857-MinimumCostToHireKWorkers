@@ -1,0 +1,45 @@
+package main
+import "sort"
+
+// [10, 20, 5] - [70,50,30] -> [7, 2.5, 6] per wage per quality => 0+2 ([7,7,7] 7*10+7*5=105) min(C(k,n)totalQuality*maxWage) n^2
+// k = 1: 30
+// k = 2: 105
+// k = 3: 100+50+120 = 270
+//
+// worker1: {7:70}
+// worker2: {2.5:50, 7:140, 6:120}
+// worker3: {6:30, 7:35}
+//
+// k=1 => 2.5, 6, 7 
+// k=2 -> no 2.5 => 6 or 7
+// k=3 -> no 2.5 and no 6 => only 7
+//
+// choose one: 2.5 or 6 or 7
+// choose two: 2.5 not ok, 6 total, 7total
+// choose three: 2.5 no, 6 no, 7total
+//
+// [3,1,10,10,1] - [4,8,2,2,7] -> [3/4, 8, 0.2, 0.2, 7] => 0+2+3 ([3/4,8,3/4,3/4,7] 3/4*3+3/4*10+3/4*10)
+// k = 1: 2
+// k = 2: 2+2 = 4
+// k = 3: 3/4*3+3/4*10+3/4*10
+// k = 4: 3*7
+//
+// 最小公倍数
+// [10, 20, 5] - [70,50,30] -> 20[140, 50, 120] per wage per quality => 0+2
+// [3,1,10,10,1] - [4,8,2,2,7] -> 15[20,90,3,3,85] => 0+2+3
+//
+// [1, 10, 20, 5] - [7, 70,50,30] -> [7, 7, 2.5, 6]
+// k=1 : 2.5 or 6 or 7
+// k=2 : 6 or 7
+// k=3 : 7
+
+
+func mincostToHireWorkers(quality []int, wage []int, k int) float64 {
+  perWagePerQuality := make([]float64, 0, len(wage))
+  for i := range wage {
+    perWagePerQuality = append(perWagePerQuality, wage[i]/quality[i])
+  }
+  sort.Float64s(perWagePerQuality)
+  atomicPrice := perWagePerQuality[k]
+
+}
