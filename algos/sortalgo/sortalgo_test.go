@@ -88,10 +88,18 @@ func TestHeapsort(t *testing.T) {
 	testSort(t, heapsort, "HeapSort")
 }
 
-// func TestQuickSort(t *testing.T) {
-// 	testSort(t, quicksort, "QuickSort")
-// }
-//
-// func TestMergeSort(t *testing.T) {
-// 	testSort(t, mergesort, "MergeSort")
-// }
+func TestQuickSort(t *testing.T) {
+	testSort(t, quicksort, "QuickSort")
+}
+
+func TestMergeSort(t *testing.T) {
+	testSort(t, mergesort, "MergeSort")
+}
+
+func TestInsertSort(t *testing.T) {
+	testSort(t, insertsort, "InsertSort")
+}
+
+func TestBubbleSort(t *testing.T) {
+	testSort(t, bubblesort, "BubbleSort")
+}
