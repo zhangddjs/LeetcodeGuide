@@ -1,6 +1,7 @@
 package graph
 
 import (
+	"math"
 	"reflect"
 	"testing"
 )
@@ -8,8 +9,10 @@ import (
 type dagInterface interface {
 	AddEdge(from, to int)
 	AddWeightedEdge(from, to, weight int)
-	TopologicalSort() []int
+	TopologicalSort() []int    //https://www.geeksforgeeks.org/dsa/topological-sort-using-dfs/
+	TopologicalSortBFS() []int // https://www.geeksforgeeks.org/dsa/topological-sorting-indegree-based-solution/
 	IsDAG() bool
+	ShortestPath(start int) (distances map[int]int)
 }
 
 var dagAddEdgeTestCases = []struct {
@@ -65,6 +68,25 @@ var weightedEdgeTestCases = []struct {
 	{"single edge", [][]int{{0, 1, 5}}},
 	{"multiple edges", [][]int{{0, 1, 4}, {1, 2, 3}, {0, 2, 8}}},
 	{"complex weights", [][]int{{0, 1, 2}, {0, 2, 6}, {1, 2, 3}, {1, 3, 1}, {2, 3, 1}}},
+}
+
+var dagshortestPathTestCases = []struct {
+	name     string
+	edges    [][]int // [from, to, weight]
+	start    int
+	expected map[int]int
+}{
+	{"empty graph", [][]int{}, 0, map[int]int{}},
+	{"empty graph", [][]int{}, 1, map[int]int{}},
+	{"single edge", [][]int{{0, 1, 5}}, 0, map[int]int{0: 0, 1: 5}},
+	{"linear path", [][]int{{0, 1, 4}, {1, 2, 3}}, 0, map[int]int{0: 0, 1: 4, 2: 7}},
+	{"multiple paths", [][]int{{0, 1, 2}, {0, 2, 8}, {1, 2, 3}}, 0, map[int]int{0: 0, 1: 2, 2: 5}},
+	{"diamond pattern", [][]int{{0, 1, 2}, {0, 2, 6}, {1, 3, 1}, {2, 3, 1}}, 0, map[int]int{0: 0, 1: 2, 2: 6, 3: 3}},
+	{"complex DAG", [][]int{{0, 1, 4}, {0, 2, 2}, {1, 3, 1}, {2, 3, 5}, {2, 4, 3}, {3, 4, 1}}, 0, map[int]int{0: 0, 1: 4, 2: 2, 3: 5, 4: 5}},
+	{"disconnected component", [][]int{{0, 1, 3}, {2, 3, 2}}, 0, map[int]int{0: 0, 1: 3, 2: math.MaxInt, 3: math.MaxInt}},
+	{"start from middle", [][]int{{0, 1, 2}, {1, 2, 3}, {1, 3, 1}}, 1, map[int]int{0: math.MaxInt, 1: 0, 2: 3, 3: 1}},
+	{"unreachable nodes", [][]int{{0, 1, 3}, {2, 3, 2}, {4, 5, 1}}, 0, map[int]int{0: 0, 1: 3, 2: math.MaxInt, 3: math.MaxInt, 4: math.MaxInt, 5: math.MaxInt}},
+	{"negative weights", [][]int{{0, 1, -2}, {0, 2, 4}, {1, 2, 3}, {1, 3, 2}, {2, 3, -5}}, 0, map[int]int{0: 0, 1: -2, 2: 1, 3: -4}},
 }
 
 func testDAGAddEdge(t *testing.T, newDAG func() dagInterface) {
@@ -123,6 +145,38 @@ func testDAGTopologicalSort(t *testing.T, newDAG func() dagInterface) {
 	}
 }
 
+func testDAGTopologicalSortBFS(t *testing.T, newDAG func() dagInterface) {
+	for _, tc := range topSortTestCases {
+		t.Run(tc.name, func(t *testing.T) {
+			dag := newDAG()
+			for _, edge := range tc.edges {
+				dag.AddEdge(edge[0], edge[1])
+			}
+			result := dag.TopologicalSortBFS()
+
+			// Check if result matches any of the expected valid orderings
+			valid := false
+			for _, expected := range tc.expected {
+				if reflect.DeepEqual(result, expected) {
+					valid = true
+					break
+				}
+			}
+
+			if !valid && len(tc.expected) > 0 {
+				// Additional check: verify topological ordering property
+				if isValidTopologicalOrder(result, tc.edges) {
+					valid = true
+				}
+			}
+
+			if !valid {
+				t.Errorf("TopologicalSortBFS() = %v, want one of %v", result, tc.expected)
+			}
+		})
+	}
+}
+
 func testDAGIsDAG(t *testing.T, newDAG func() dagInterface) {
 	for _, tc := range isDAGTestCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -133,6 +187,28 @@ func testDAGIsDAG(t *testing.T, newDAG func() dagInterface) {
 			result := dag.IsDAG()
 			if result != tc.expected {
 				t.Errorf("IsDAG() = %v, want %v", result, tc.expected)
+			}
+		})
+	}
+}
+
+func testDAGShortestPath(t *testing.T, newDAG func() dagInterface) {
+	for _, tc := range dagshortestPathTestCases {
+		t.Run(tc.name, func(t *testing.T) {
+			dag := newDAG()
+			for _, edge := range tc.edges {
+				if len(edge) >= 3 {
+					dag.AddWeightedEdge(edge[0], edge[1], edge[2])
+				}
+			}
+
+			// if len(tc.edges) == 0 && tc.start == 0 {
+			// 	dag.AddEdge(0, 0)
+			// }
+
+			result := dag.ShortestPath(tc.start)
+			if !reflect.DeepEqual(result, tc.expected) {
+				t.Errorf("ShortestPath(%d) = %v, want %v", tc.start, result, tc.expected)
 			}
 		})
 	}
@@ -219,7 +295,6 @@ func isValidTopologicalOrder(order []int, edges [][]int) bool {
 }
 
 // Uncomment and implement when DAG implementation is available
-/*
 func TestDAG(t *testing.T) {
 	t.Run("AddEdge", func(t *testing.T) {
 		testDAGAddEdge(t, func() dagInterface { return NewDAG() })
@@ -230,8 +305,14 @@ func TestDAG(t *testing.T) {
 	t.Run("TopologicalSort", func(t *testing.T) {
 		testDAGTopologicalSort(t, func() dagInterface { return NewDAG() })
 	})
+	t.Run("TopologicalSortBFS", func(t *testing.T) {
+		testDAGTopologicalSortBFS(t, func() dagInterface { return NewDAG() })
+	})
 	t.Run("IsDAG", func(t *testing.T) {
 		testDAGIsDAG(t, func() dagInterface { return NewDAG() })
+	})
+	t.Run("ShortestPath", func(t *testing.T) {
+		testDAGShortestPath(t, func() dagInterface { return NewDAG() })
 	})
 	t.Run("Comprehensive", func(t *testing.T) {
 		testDAGComprehensive(t, func() dagInterface { return NewDAG() })
@@ -240,4 +321,3 @@ func TestDAG(t *testing.T) {
 		testDAGSequentialOperations(t, func() dagInterface { return NewDAG() })
 	})
 }
-*/

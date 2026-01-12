@@ -6,14 +6,16 @@
 LeetCode 35 - 搜索插入位置
 LeetCode 162 - 寻找峰值
 LeetCode 69 - x 的平方根
+LeetCode 278 - 第一个错误的版本（找第一个 bad）
 
 - 找精确值⚠️
 LeetCode 704 - 二分查找
+最佳解答关于low, high, mid边界选择，https://leetcode.com/problems/binary-search/solutions/423162/binary-search-101-by-aminick-kkch/
 
 - 最后一个
 LeetCode 34 - 在排序数组中查找元素的第一个和最后一个位置
 LeetCode 275 - H指数 II（找最后一个满足条件的位置）
-LeetCode 278 - 第一个错误的版本（找第一个 bad）
+LeetCode 278 - follow up 找最后一个good case
 
 ## 左闭右闭 vs 左闭右开的选择
 

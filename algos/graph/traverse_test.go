@@ -9,6 +9,7 @@ import (
 type graphInterface interface {
 	AddEdge(from, to int)
 	DFS(start int) []int
+	DFSWhole() []int
 	HasPath(from, to int) bool
 	ShortestPath(from, to int) []int
 }
@@ -41,6 +42,34 @@ var dfsTestCases = []struct {
 	{"cycle graph", [][]int{{0, 1}, {1, 2}, {2, 3}, {3, 0}}, 0, []int{0, 1, 2, 3}},
 	{"star from center", [][]int{{0, 1}, {0, 2}, {0, 3}}, 0, []int{0, 1, 2, 3}},
 	{"star from leaf", [][]int{{0, 1}, {0, 2}, {0, 3}}, 1, []int{1, 0, 2, 3}},
+}
+
+var dfsWholeTestCases = []struct {
+	name     string
+	edges    [][]int
+	expected []int
+}{
+	{"empty graph", [][]int{}, []int{}},
+	{"single node", [][]int{{0, 0}}, []int{0}},
+	{"linear path", [][]int{{0, 1}, {1, 2}, {2, 3}}, []int{0, 1, 2, 3}},
+	{"tree structure", [][]int{{0, 1}, {0, 2}, {1, 3}, {1, 4}}, []int{0, 1, 2, 3, 4}},
+	{"disconnected components", [][]int{{0, 1}, {2, 3}}, []int{0, 1, 2, 3}},
+	{"cycle graph", [][]int{{0, 1}, {1, 2}, {2, 0}}, []int{0, 1, 2}},
+	{"star pattern", [][]int{{0, 1}, {0, 2}, {0, 3}}, []int{0, 1, 2, 3}},
+}
+
+var bfsWholeTestCases = []struct {
+	name     string
+	edges    [][]int
+	expected []int
+}{
+	{"empty graph", [][]int{}, []int{}},
+	{"single node", [][]int{{0, 0}}, []int{0}},
+	{"linear path", [][]int{{0, 1}, {1, 2}, {2, 3}}, []int{0, 1, 2, 3}},
+	{"tree structure", [][]int{{0, 1}, {0, 2}, {1, 3}, {1, 4}}, []int{0, 1, 2, 3, 4}},
+	{"disconnected components", [][]int{{0, 1}, {2, 3}}, []int{0, 1, 2, 3}},
+	{"cycle graph", [][]int{{0, 1}, {1, 2}, {2, 0}}, []int{0, 1, 2}},
+	{"star pattern", [][]int{{0, 1}, {0, 2}, {0, 3}}, []int{0, 1, 2, 3}},
 }
 
 var hasPathTestCases = []struct {
@@ -193,6 +222,56 @@ func testGraphComprehensive(t *testing.T, newGraph func() graphInterface) {
 	}
 }
 
+func testGraphDFSWhole(t *testing.T, newGraph func() graphInterface) {
+	for _, tc := range dfsWholeTestCases {
+		t.Run(tc.name, func(t *testing.T) {
+			g := newGraph()
+			for _, edge := range tc.edges {
+				g.AddEdge(edge[0], edge[1])
+			}
+			result := g.DFSWhole()
+
+			// Sort both expected and result for comparison (DFS order can vary)
+			sortedResult := make([]int, len(result))
+			copy(sortedResult, result)
+			sort.Ints(sortedResult)
+
+			sortedExpected := make([]int, len(tc.expected))
+			copy(sortedExpected, tc.expected)
+			sort.Ints(sortedExpected)
+
+			if !reflect.DeepEqual(sortedResult, sortedExpected) {
+				t.Errorf("DFSWhole() = %v, want %v", result, tc.expected)
+			}
+		})
+	}
+}
+
+// func testGraphBFSWhole(t *testing.T, newGraph func() graphInterface) {
+// 	for _, tc := range bfsWholeTestCases {
+// 		t.Run(tc.name, func(t *testing.T) {
+// 			g := newGraph()
+// 			for _, edge := range tc.edges {
+// 				g.AddEdge(edge[0], edge[1])
+// 			}
+// 			result := g.BFSWhole()
+//
+// 			// Sort both expected and result for comparison (BFS order can vary)
+// 			sortedResult := make([]int, len(result))
+// 			copy(sortedResult, result)
+// 			sort.Ints(sortedResult)
+//
+// 			sortedExpected := make([]int, len(tc.expected))
+// 			copy(sortedExpected, tc.expected)
+// 			sort.Ints(sortedExpected)
+//
+// 			if !reflect.DeepEqual(sortedResult, sortedExpected) {
+// 				t.Errorf("BFSWhole() = %v, want %v", result, tc.expected)
+// 			}
+// 		})
+// 	}
+// }
+
 func testGraphSequentialOperations(t *testing.T, newGraph func() graphInterface) {
 	g := newGraph()
 
@@ -244,6 +323,12 @@ func TestGraph(t *testing.T) {
 	t.Run("DFS", func(t *testing.T) {
 		testGraphDFS(t, func() graphInterface { return NewGraph() })
 	})
+	t.Run("DFSWhole", func(t *testing.T) {
+		testGraphDFSWhole(t, func() graphInterface { return NewGraph() })
+	})
+	// t.Run("BFSWhole", func(t *testing.T) {
+	// 	testGraphBFSWhole(t, func() graphInterface { return NewGraph() })
+	// })
 	t.Run("HasPath", func(t *testing.T) {
 		testGraphHasPath(t, func() graphInterface { return NewGraph() })
 	})

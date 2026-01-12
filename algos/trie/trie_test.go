@@ -49,6 +49,7 @@ var startsWithTestCases = []struct {
 	{"exact word match", []string{"hello"}, "hello", true},
 	{"empty prefix", []string{"hello"}, "", true},
 	{"multiple words with prefix", []string{"cat", "car", "card"}, "car", true},
+	{"multiple words with prefix", []string{"cat", "car", "card"}, "cad", false},
 	{"single character prefix", []string{"hello"}, "h", true},
 	{"case sensitive prefix", []string{"Hello"}, "hello", false},
 }
