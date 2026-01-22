@@ -1,0 +1,138 @@
+// Generated on 2026-01-21 09:00:20
+// Daily practice file: dag_20260121.go (dag template)
+
+package graph
+
+import "math"
+
+type Dag struct {
+	Nodes map[int]map[int]int
+}
+
+func (d *Dag) AddEdge(from, to int) {
+	d.AddWeightedEdge(from, to, 1)
+}
+
+func (d *Dag) AddWeightedEdge(from, to, weight int) {
+	if _, ok := d.Nodes[from]; !ok {
+		d.Nodes[from] = make(map[int]int)
+	}
+	if _, ok := d.Nodes[to]; !ok {
+		d.Nodes[to] = make(map[int]int)
+	}
+	d.Nodes[from][to] = weight
+}
+
+func (d *Dag) TopologicalSort() []int {
+	visited := make(map[int]bool)
+	res := make([]int, 0)
+	for i := range d.Nodes {
+		d.topo(i, visited, &res)
+	}
+	reverse(res)
+	return res
+}
+
+func (d *Dag) topo(i int, visited map[int]bool, res *[]int) {
+	if visited[i] {
+		return
+	}
+	visited[i] = true
+	for j := range d.Nodes[i] {
+		d.topo(j, visited, res)
+	}
+	*res = append(*res, i)
+}
+
+func (d *Dag) TopologicalSortBFS() []int {
+	indegrees := d.initialIndegrees()
+	q := make([]int, 0)
+	for i, d := range indegrees {
+		if d == 0 {
+			q = append(q, i)
+		}
+	}
+	res := make([]int, 0)
+	for len(q) > 0 {
+		i := q[0]
+		q = q[1:]
+		res = append(res, i)
+		for j := range d.Nodes[i] {
+			indegrees[j]--
+			if indegrees[j] == 0 {
+				q = append(q, j)
+			}
+		}
+	}
+	return res
+}
+
+func (d *Dag) initialIndegrees() map[int]int {
+	res := make(map[int]int)
+	for i := range d.Nodes {
+		res[i] = res[i]
+		for j := range d.Nodes[i] {
+			res[j]++
+		}
+	}
+	return res
+}
+
+func (d *Dag) IsDAG() bool {
+	colors := make(map[int]int)
+	for i := range d.Nodes {
+		if d.hasCycle(i, colors) {
+			return false
+		}
+	}
+	return true
+}
+
+func (d *Dag) hasCycle(i int, colors map[int]int) bool {
+	if colors[i] == 1 {
+		return true
+	} else if colors[i] == 2 {
+		return false
+	}
+	colors[i] = 1
+	for j := range d.Nodes[i] {
+		if d.hasCycle(j, colors) {
+			return true
+		}
+	}
+	colors[i] = 2
+	return false
+}
+
+func (d *Dag) ShortestPath(start int) map[int]int {
+	if d.Nodes[start] == nil {
+		return make(map[int]int)
+	}
+	nodes := d.TopologicalSort()
+	costs := d.initialCosts(start)
+	for i := range nodes {
+		for j, w := range d.Nodes[i] {
+			d.relax(i, j, w, costs)
+		}
+	}
+	return costs
+}
+
+func (d *Dag) initialCosts(start int) map[int]int {
+	costs := make(map[int]int)
+	for i := range d.Nodes {
+		costs[i] = math.MaxInt
+	}
+	costs[start] = 0
+	return costs
+}
+
+func (d *Dag) relax(i, j, w int, costs map[int]int) {
+	if costs[i] != math.MaxInt {
+		costs[j] = min(costs[j], costs[i]+w)
+	}
+}
+
+func NewDAG() *Dag {
+	return &Dag{make(map[int]map[int]int)}
+}

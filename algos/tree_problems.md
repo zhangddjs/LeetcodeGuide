@@ -118,9 +118,9 @@ LeetCode: 307, 308, 315, 327
 
 虽然是栈/队列，但常与树结合
 
-LeetCode 84: Largest Rectangle in Histogram（⭐ Google 超高频）
-LeetCode 85: Maximal Rectangle
-LeetCode 739: Daily Temperatures
+✅LeetCode 84: Largest Rectangle in Histogram（⭐ Google 超高频）
+✅LeetCode 85: Maximal Rectangle
+✅LeetCode 739: Daily Temperatures
 LeetCode 907: Sum of Subarray Minimums
 
 两种类型：
