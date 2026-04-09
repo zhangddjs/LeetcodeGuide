@@ -1,0 +1,70 @@
+# Generated on 2026-04-09 10:18:34
+# Daily practice file: unionfind_20260409.py
+
+"""
+The union-find data structure, also known as disjoint set union (DSU), is used to keep track of a partition of a set into disjoint subsets.
+It supports two main operations:
+ Find: This operation determines which subset a particular element belongs to.
+       In other words, it returns the representative or the root of the set that contains the element.
+ Union: This operation merges two subsets into a single subset.
+        When you union two elements, you connect their sets so that they share the same representative.
+"""
+
+
+class UnionFind:
+    pass
+
+    # --------------------------------------------------------------
+
+    def find(self, x: int) -> int:
+        """
+        The find function in the union-find data structure is responsible for identifying the representative or the root of the set that a particular element belongs to.
+
+        1. Start at the Element
+        2. Traverse Up the Tree:
+           The function follows parent pointers from the element upwards until it reaches a node that is its own parent.
+           In other words, you keep moving up until you find the root of the set.
+        3. Path Compression (Optional but Common):
+           As you traverse the path from the element to the root, you can perform path compression.
+           This means that you update each node along the path to point directly to the root.
+           This flattening of the structure makes future find operations faster by reducing the path length.
+
+        4. Return the Root:
+           Once you reach the root, the find function returns that root element, which serves as the representative of the set.
+        """
+        pass
+
+    # --------------------------------------------------------------
+
+    def union(self, x: int, y: int) -> None:
+        """
+        The union function in the union-find data structure is responsible for merging two sets into a single set.
+        1. Find the Roots:
+           To begin, you first use the find function on both elements you want to union.
+           This gives you the root of each element's set.
+        2. Compare the Roots:
+           Once you have the roots, you compare them to determine which one should become the parent of the other.
+        3. Union by Rank or Size:
+           To keep the structure balanced, the union is typically done by comparing the rank (or the size) of the trees.
+           The root with the lower rank or smaller size is attached under the root of the root with the higher rank or larger size.
+           This helps keep the overall tree balanced and prevents it from becoming too deep.
+        4. Update the Parent:
+           After determining which root should be the parent,
+           you update the parent pointer of the root with the lower rank or size to point to the root with the higher rank or size.
+        """
+        pass
+
+    # --------------------------------------------------------------
+
+    def connected(self, x: int, y: int) -> bool:
+        pass
+
+    # --------------------------------------------------------------
+
+    def count(self) -> int:
+        pass
+
+    # --------------------------------------------------------------
+
+    def __init__(self, n: int):
+        pass
