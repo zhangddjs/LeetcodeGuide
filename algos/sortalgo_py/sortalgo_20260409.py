@@ -40,7 +40,12 @@ def insertsort(arr: List[int]) -> None:
     """
     It starts from the second element and compares it to the elements before it, inserting it into its correct position in the sorted part. It continues this process until the entire array is sorted.
     """
-    pass
+    for i in range(1, len(arr)):
+        j, x = i-1, arr[i]
+        while j >= 0 and arr[j] > x:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = x
 
 
 # --------------------------------------------------------------
@@ -49,4 +54,8 @@ def bubblesort(arr: List[int]) -> None:
     """
     It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they're in the wrong order. This process is repeated until the list is sorted. Typically, with each pass, the largest unsorted element "bubbles up" to its correct position.
     """
-    pass
+    for i in range(1, len(arr)):
+        j = i - 1
+        while j >= 0 and arr[j] > arr[j+1]:
+            arr[j], arr[j+1] = arr[j+1], arr[j]
+            j -= 1

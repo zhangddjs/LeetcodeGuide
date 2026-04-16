@@ -7,15 +7,15 @@ from typing import Callable, List
 
 def load_sortalgo_module():
     """Dynamically load the most recent sortalgo_*.py file"""
-    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    files = [f for f in os.listdir(parent_dir) if f.startswith('sortalgo_') and f.endswith('.py')]
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    files = [f for f in os.listdir(current_dir) if f.startswith('sortalgo_') and f.endswith('.py') and not f.endswith('_test.py')]
 
     if not files:
         raise FileNotFoundError("No sortalgo_*.py file found")
 
     # Get the most recent file
     latest_file = sorted(files)[-1]
-    module_path = os.path.join(parent_dir, latest_file)
+    module_path = os.path.join(current_dir, latest_file)
 
     spec = importlib.util.spec_from_file_location("sortalgo_impl", module_path)
     module = importlib.util.module_from_spec(spec)
@@ -127,6 +127,59 @@ class TestBubbleSort(unittest.TestCase):
         arr = [3, 1, 4, 1, 5, 9, 2, 6]
         self.module.bubblesort(arr)
         self.assertEqual(arr, [1, 1, 2, 3, 4, 5, 6, 9])
+
+
+def test_heapsort():
+    """Quick test for heapsort in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestHeapSort
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestHeapSort)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
+# test_heapsort()
+
+
+def test_quicksort():
+    """Quick test for quicksort in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestQuickSort
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestQuickSort)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
+# test_quicksort()
+
+
+def test_mergesort():
+    """Quick test for mergesort in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestMergeSort
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestMergeSort)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
+# test_mergesort()
+
+
+def test_insertsort():
+    """Quick test for insertsort in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestInsertSort
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestInsertSort)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
+#test_insertsort()
+
+
+def test_bubblesort():
+    """Quick test for bubblesort in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestBubbleSort
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestBubbleSort)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
+#test_bubblesort()
+
+
+def test_all_sorts():
+    """Quick test for all sorting algorithms in REPL"""
+    import unittest
+    from sortalgo_py.sortalgo_test import TestSortAlgorithms
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestSortAlgorithms)
+    return unittest.TextTestRunner(verbosity=2).run(suite)
 
 
 if __name__ == '__main__':

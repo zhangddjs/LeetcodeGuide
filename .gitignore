@@ -1,0 +1,143 @@
+# dataset
+ad_data.csv
+ad_data.db
+
+# traces
+benchmark/traces/*.json
+benchmark/traces/*.html
+cache_dir/
+
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+
+# Bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Auxiliary and intermediate folders
+.aux/
+.out/
+_minted*/
+pythontex-files-*/
+
+# latexmk
+*.latexmain
+
+# hyperref
+*.brf
+
+# minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+# todonotes
+*.tdo
+
+# listings
+*.lol
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# glossaries
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# nomencl
+*.nlg
+*.nlo
+*.nls
+
+# algorithms
+*.loa
+
+# xindy
+*.xdy
+
+# changes
+*.soc
+
+# endfloat
+*.ttt
+*.fff
+
+# easy-todo
+*.lod
+
+# acmart (ACM template specific)
+*.cut
+*.cpt
+
+# comment.sty
+*.cut
+
+# PDF output (uncomment if you want to ignore PDF)
+# *.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
