@@ -59,6 +59,13 @@ def romanToInt(self, s: str) -> int:
       else: res += roman[a]
   return res + roman[s[-1]]
 
+# pairwise 同时取相邻元素
+# A = [1, 3, 2, 5]
+# pairwise(A) → (1,3), (3,2), (2,5)
+def minOperations(self, A: list[int]) -> int:
+    return sum(max(0, a - b) for a, b in pairwise(A))
+
+
 # ================================
 # 用迭代器遍历
 def isSubsequence(self, s: str, t: str) -> bool:
@@ -77,6 +84,19 @@ matrix[:] = zip(*matrix[::-1]) # "就地"
 # zip(*matrix) — O(m×n)，遍历所有元素
 # [::-1] — O(m) 或 O(n)，只是反转行/列的顺序，可以忽略
 # [*...] — O(m×n)，解包
+```
+
+```py
+# ================================
+# 将两个数组搞成字典，分数 -> 名次 场景
+dict(zip(sort, rank))
+# 用原始分数每个元素去查表
+list(map(dict(zip(sort, rank)).get, nums))
+# 等价于
+res = []
+for score in nums:
+    res.append(d.get(score))
+
 ```
 
 ## 切片操作
@@ -109,6 +129,11 @@ class Solution:
 # 所以 ~i 就是 A[-(i+1)]，即从末尾数第 i+1 个，等价于 A[n-1-i]：
 # A[~i]  ==  A[-(i+1)]  ==  A[n-1-i]
 # A[~j]  ==  A[-(j+1)]  ==  A[n-1-j]
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = [c.lower() for c in s if c.isalnum()]
+        return all (s[i] == s[~i] for i in range(len(s)//2))
 ```
 
 ## 重叠元素
@@ -131,3 +156,22 @@ sum(map(S.count, J))
 # 对J每个字符统计在S中的次数, O(mn)
 # → [1, 2]
 ```
+
+## 邻接表 defaultdict 妙用
+
+```python
+# adj = {} wrong
+adf = defaultdict(list)
+for u,v in edges:
+    adj[u].append(v)
+    adj[v].append(u)
+
+# 使用prev 节省掉visited set
+def dfs(node: int, prev: int) -> int:
+    d = 0
+    for c in graph[node]:
+        if c != prev:
+            d = max(d, dfs(c, node) + 1)
+    return d
+```
+
